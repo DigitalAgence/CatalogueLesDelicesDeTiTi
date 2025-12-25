@@ -9,29 +9,32 @@
   <body>
     <div class="flipbook-container">
       <div class="flipbook">
-        <div class="page" style="background-image: url('pages/1.png')"></div>
-        <div class="page" style="background-image: url('pages/2.png')"></div>
-        <div class="page" style="background-image: url('pages/3.png')"></div>
-        <div class="page" style="background-image: url('pages/4.png')"></div>
-        <div class="page" style="background-image: url('pages/5.png')"></div>
-        <div class="page" style="background-image: url('pages/6.png')"></div>
-        <div class="page" style="background-image: url('pages/7.png')"></div>
-        <div class="page" style="background-image: url('pages/8.png')"></div>
-        <div class="page" style="background-image: url('pages/9.png')"></div>
-        <div class="page" style="background-image: url('pages/10.png')"></div>
-        <div class="page" style="background-image: url('pages/11.png')"></div>
+        <div class="page"><img src="pages/1.png" loading="eager" /></div>
+        <div class="page"><img src="pages/2.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/3.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/4.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/5.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/6.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/7.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/8.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/9.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/10.png" loading="lazy" /></div>
+        <div class="page"><img src="pages/11.png" loading="lazy" /></div>
       </div>
-      <button id="prev">⟨</button> <button id="next">⟩</button>
+
+      <button id="prev">⟨</button>
+      <button id="next">⟩</button>
     </div>
-    <div>
-      <audio id="audio" src="pages/turn-a-page-336933.mp3"></audio>
-      <a href="https://digitalagence.fr" target="_blank">
-        <img
-          class="logo"
-          src="pages/digital agence (3).png"
-          alt="Digital Agence"
-      /></a>
-    </div>
+
+    <audio id="audio" src="pages/turn-a-page-336933.mp3"></audio>
+
+    <a href="https://digitalagence.fr" target="_blank">
+      <img
+        class="logo"
+        src="pages/digital agence (3).png"
+        alt="Digital Agence"
+      />
+    </a>
 
     <script src="script.js"></script>
   </body>

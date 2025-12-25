@@ -5,44 +5,18 @@ const audio = document.getElementById("audio");
 
 let currentPage = 0;
 
-// ordre des pages (z-index)
+// ordre z-index
 pages.forEach((page, index) => {
   page.style.zIndex = pages.length - index;
 });
 
-// 🔊 jouer le son
+// son
 function playSound() {
   audio.currentTime = 0;
   audio.play();
 }
 
-// 📐 redimensionner les pages
-function resizePages() {
-  const container = document.querySelector(".book");
-  const boundWidth = container.clientWidth;
-  const boundHeight = container.clientHeight;
-
-  pages.forEach((page) => {
-    const originalWidth = page.naturalWidth || page.offsetWidth;
-    const originalHeight = page.naturalHeight || page.offsetHeight;
-
-    const size = calculateBound({
-      width: originalWidth,
-      height: originalHeight,
-      boundWidth: boundWidth,
-      boundHeight: boundHeight,
-    });
-
-    page.style.width = size.width + "px";
-    page.style.height = size.height + "px";
-  });
-}
-
-// 🔄 resize au chargement + resize écran
-window.addEventListener("load", resizePages);
-window.addEventListener("resize", resizePages);
-
-// ▶ bouton suivant (bloqué à la dernière page)
+// bouton suivant
 nextBtn.addEventListener("click", () => {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.add("flipped");
@@ -51,7 +25,7 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-// ◀ bouton précédent
+// bouton précédent
 prevBtn.addEventListener("click", () => {
   if (currentPage > 0) {
     currentPage--;
@@ -60,7 +34,7 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
-// 📖 clic sur une page (dernière page bloquée)
+// clic page
 pages.forEach((page, index) => {
   page.addEventListener("click", () => {
     if (index === currentPage && currentPage < pages.length - 1) {

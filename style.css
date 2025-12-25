@@ -4,52 +4,60 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100svh;
   font-family: Arial, sans-serif;
 }
 
+/* LOGO */
 .logo {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  width: 10%;
-  opacity: 0.8;
+  bottom: 10px;
+  left: 10px;
+  width: clamp(60px, 12vw, 120px);
+  opacity: 0.85;
+  z-index: 1000;
 }
 
+/* CONTAINER FLIPBOOK */
 .flipbook-container {
   position: relative;
-  width: 100vw;
-  max-width: 420px; /* taille desktop max */
-  aspect-ratio: 411 / 659; /* ratio portrait des images */
+  width: min(92vw, 420px);
+  aspect-ratio: 411 / 659;
   perspective: 2000px;
 }
 
+/* LIVRE */
 .flipbook {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
+/* PAGE */
 .page {
-  width: 100%;
-  height: 100%;
   position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   inset: 0;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transform-origin: left center;
   transition: transform 0.9s ease;
   backface-visibility: hidden;
+  user-select: none;
 }
 
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* PAGE TOURNÉE */
 .page.flipped {
   transform: rotateY(-180deg);
 }
 
+/* BOUTONS */
 #prev,
 #next {
   position: absolute;
@@ -62,7 +70,8 @@ body {
   padding: 10px 15px;
   cursor: pointer;
   z-index: 1000;
-  opacity: 0.7;
+  border-radius: 8px;
+  opacity: 0.8;
 }
 
 #prev:hover,
@@ -71,23 +80,13 @@ body {
 }
 
 #prev {
-  left: -50px;
+  left: -45px;
 }
-
 #next {
-  right: -50px;
+  right: -45px;
 }
 
-/* Responsive amélioré */
-@media (max-width: 1024px) {
-  #prev {
-    left: -30px;
-  }
-  #next {
-    right: -30px;
-  }
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
   #prev {
     left: 5px;
@@ -95,12 +94,17 @@ body {
   #next {
     right: 5px;
   }
+  #prev,
+  #next {
+    font-size: 1.6rem;
+    padding: 8px 12px;
+  }
 }
 
 @media (max-width: 480px) {
   #prev,
   #next {
-    font-size: 1.5rem;
-    padding: 8px 12px;
+    font-size: 1.4rem;
+    padding: 6px 10px;
   }
 }
