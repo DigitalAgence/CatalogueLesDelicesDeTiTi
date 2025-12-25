@@ -5,7 +5,7 @@ const audio = document.getElementById("audio");
 
 let currentPage = 0;
 
-// ordre des pages
+// ordre des pages (z-index)
 pages.forEach((page, index) => {
   page.style.zIndex = pages.length - index;
 });
@@ -18,7 +18,7 @@ function playSound() {
 
 // 📐 redimensionner les pages
 function resizePages() {
-  const container = document.querySelector(".book"); // conteneur du livre
+  const container = document.querySelector(".book");
   const boundWidth = container.clientWidth;
   const boundHeight = container.clientHeight;
 
@@ -42,9 +42,9 @@ function resizePages() {
 window.addEventListener("load", resizePages);
 window.addEventListener("resize", resizePages);
 
-// ▶ bouton suivant
+// ▶ bouton suivant (bloqué à la dernière page)
 nextBtn.addEventListener("click", () => {
-  if (currentPage < pages.length) {
+  if (currentPage < pages.length - 1) {
     pages[currentPage].classList.add("flipped");
     currentPage++;
     playSound();
@@ -60,10 +60,10 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
-// 📖 clic sur une page
+// 📖 clic sur une page (dernière page bloquée)
 pages.forEach((page, index) => {
   page.addEventListener("click", () => {
-    if (index === currentPage) {
+    if (index === currentPage && currentPage < pages.length - 1) {
       page.classList.add("flipped");
       currentPage++;
       playSound();
