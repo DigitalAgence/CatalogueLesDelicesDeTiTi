@@ -10,13 +10,10 @@ body {
 
 .logo {
   position: absolute;
-  bottom: 15px;
+  bottom: 1px;
   left: 15px;
   z-index: 100;
-  height: auto;
-  width: auto;
-  max-width: 16%;
-  max-height: 19%;
+  width: 10%;
 }
 
 .flipbook-container {
