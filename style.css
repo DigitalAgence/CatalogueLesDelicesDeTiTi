@@ -8,6 +8,17 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.logo {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 100;
+  height: auto;
+  width: auto;
+  max-width: 16%;
+  max-height: 19%;
+}
+
 .flipbook-container {
   position: relative;
   width: 90vw;
