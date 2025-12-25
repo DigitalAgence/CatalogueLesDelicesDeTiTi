@@ -58,6 +58,31 @@ body {
 }
 
 /* BOUTONS */
+/* BOUTON TÉLÉPHONE FLOTTANT */
+#contact-button {
+  position: fixed; /* reste visible même en scroll */
+  bottom: 20px; /* bas de la page */
+  right: 20px; /* droite de la page */
+  background: #f8979467; /* couleur bouton */
+  color: #7b3f00;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 4px;
+  border-radius: 50%; /* rond */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+#contact-button:hover {
+  background: #fddbd9;
+  color: #f89794;
+  transform: translateY(-3px);
+}
+
 #prev,
 #next {
   position: absolute;
