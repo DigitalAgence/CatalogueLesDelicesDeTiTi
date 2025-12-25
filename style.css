@@ -10,15 +10,14 @@ body {
 
 .logo {
   position: absolute;
-  bottom: 1px;
-  left: 15px;
-  z-index: 100;
+  bottom: 0;
+  left: 0;
   width: 10%;
 }
 
 .flipbook-container {
   position: relative;
-  width: 90vw;
+  width: 100vw;
   max-width: 420px; /* taille desktop max */
   aspect-ratio: 411 / 659; /* ratio portrait des images */
   perspective: 2000px;
@@ -88,10 +87,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .flipbook-container {
-    width: 95vw;
-    height: auto;
-  }
   #prev {
     left: 5px;
   }
